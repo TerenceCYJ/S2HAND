@@ -285,7 +285,7 @@ if __name__ == '__main__':
     logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%Y/%m/%d %H:%M:%S', filename=os.path.join(args.base_output_dir, 'train.log'), level=logging.INFO)
     logging.info("=====================================================")
 
-    model = models.Model('/dockerdata/terrchen/code/TextureHand/examples/data/obj/sphere/sphere_642.obj', args=args)
+    model = models.Model('/code/TextureHand/examples/data/obj/sphere/sphere_642.obj', args=args)
     
     model, current_epoch = load_model(model, args)
 

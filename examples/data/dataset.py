@@ -1717,11 +1717,11 @@ class FreiHand:
             self.joint_list = json_load(os.path.join(self.base_path, '%s_xyz.json' % dataset_name))
             self.verts_list = []
             #self.verts_list = json_load(os.path.join(self.base_path, '%s_verts.json' % self.set_name))
-            #self.open_2dj_lists = json_load('/dockerdata/terrchen/data/FreiHand_save/debug/detect_all.json')
+            #self.open_2dj_lists = json_load('/data/FreiHand_save/debug/detect_all.json')
             self.open_2dj_lists = json_load(os.path.join(self.base_path, 'openpose_v2/training', 'detect_all.json'))
             self.open_2dj_list = self.open_2dj_lists[0]
             self.open_2dj_con_list = self.open_2dj_lists[1]
-            #self.CRFmask_dir = '/dockerdata/terrchen/data/FreiHand_save/CRFmask/training'
+            #self.CRFmask_dir = '/data/FreiHand_save/CRFmask/training'
             self.CRFmask_dir = os.path.join(self.base_path, 'CRFmask/training')
             '''
             self.bgimgs_dir = '/apdcephfs/share_1313228/home/terrchen/mydata/scene_data'
@@ -1785,11 +1785,11 @@ class FreiHand:
             img_idxs = [int(imgname.split(".")[0]) for imgname in sorted(os.listdir(os.path.join(self.base_path, self.set_name, 'rgb')))]
             self.prefix_template = "{:08d}"
             prefixes = [self.prefix_template.format(idx) for idx in img_idxs]
-            #self.open_2dj_lists = json_load('/dockerdata/terrchen/data/FreiHand_save/evaluation/detect.json')
+            #self.open_2dj_lists = json_load('/data/FreiHand_save/evaluation/detect.json')
             self.open_2dj_lists = json_load(os.path.join(self.base_path, 'openpose/evaluation', 'detect.json'))
             self.open_2dj_list = self.open_2dj_lists[0]
             self.open_2dj_con_list = self.open_2dj_lists[1]
-            #self.CRFmask_dir = '/dockerdata/terrchen/data/FreiHand_save/CRFmask/evaluation'
+            #self.CRFmask_dir = '/data/FreiHand_save/CRFmask/evaluation'
             self.CRFmask_dir = os.path.join(self.base_path, 'CRFmask/evaluation')
         
         image_names = []
@@ -2052,7 +2052,7 @@ class HO3D:
         return meta
     
     def get_open_2dj(self, idx):
-        #self.open_2dj = json_load('/dockerdata/terrchen/data/HO3D/train/SS1/openpose/detect.json')
+        #self.open_2dj = json_load('/data/HO3D/train/SS1/openpose/detect.json')
         [seq_name, image_name] = self.image_list[idx]
         open_2dj = self.open_2dj_list[seq_name][0][int(image_name)]
         open_2dj = torch.FloatTensor(open_2dj)

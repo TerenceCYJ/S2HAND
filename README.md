@@ -20,24 +20,19 @@ Note that we modified the ```neural_renderer/lighting.py``` compared to [daniili
 ### Data
 For example, for 3D hand reconstruction task on the FreiHAND dataset:
 - Download the FreiHAND dataset from the [website](https://lmb.informatik.uni-freiburg.de/resources/datasets/FreihandDataset.en.html).
-- Modify the input and output directory accordingly in ``` ```.
-- Offline 2D keypoint detection use a off-the-shelf detector like [pytorch-openpose](https://github.com/Hzzone/pytorch-openpose). 
-- - Use the following script  and modify the input and output directory accordingly. 
-    ```
-    python example/openpose_detector/hand_dectect.py
-    ```
-- - We also provide detected 2D keypoints for FreiHAND and HO3D training set.
-  
-    | Dataset | FreiHAND | HO3D |
-    | :-----: | :----: | :----: |
-    | Detected 2D Keypoints | [GoogleDrive]()/[BaiduNetdisk]() | [GoogleDrive]()/[BaiduNetdisk]() |
+- Modify the input and output directory accordingly in ```examples/config/*.json```.
 
-### Training
-```
-cd S2HAND
-python ./examples/train.py --config_json examples/config/HO3D/debug.json
-```
-### Testing
+### Offline 2D Detection
+- Offline 2D keypoint detection use a off-the-shelf detector like [pytorch-openpose](https://github.com/Hzzone/pytorch-openpose). 
+   - We also provide detected 2D keypoints for FreiHAND training set (in ```outputs/openpose```).
+   - Or Download the ```hand_pose_model.pth``` provided by [pytorch-openpose](https://github.com/Hzzone/pytorch-openpose#download-the-models), and put the file to ```examples/openpose_detector/src```. Then use the following script  and modify the input and output directory accordingly. 
+
+        ```python example/openpose_detector/hand_dectect.py```
+
+
+### Training and Inference
+
+Coming soon...
 
 ## Citation
 If you find our work useful in your research, please consider citing:

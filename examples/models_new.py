@@ -255,30 +255,6 @@ class Model(nn.Module):
             else:
                 self.get_gt_depth = False
             
-
-            # Perception loss
-            '''
-            if 'percep' in args.losses:
-                self.hand_det = handpose_model()
-                model_dict = util.transfer(self.hand_det, torch.load('/dockerdata/terrchen/code/pytorch-openpose/model/hand_pose_model.pth'))
-                print("Read openpose weights.")
-                self.hand_det.load_state_dict(model_dict)
-                self.hand_det.eval()
-            '''
-            if 'percep_feat' in args.train_requires:#'percep' in args.losses:
-                '''
-                self.percep_encoder = Percep_Encoder()
-                for param in self.percep_encoder.parameters():
-                    param.requires_grad = False
-                '''
-                '''
-                from losses import VGGPerceptualLoss,EffiPerceptualLoss
-                self.perc_crit = EffiPerceptualLoss(pretrained_model=args.efficientnet_pretrained)#VGGPerceptualLoss()
-                '''
-                from losses import OpenPosePerceptualLoss
-                self.perc_crit = OpenPosePerceptualLoss(model_path='/apdcephfs/private_terrchen/mycode/pytorch-openpose/model/hand_pose_model.pth')
-
-                # [a for a in self.perc_crit.percep_encoder.parameters()][0][0]
         else:
             self.regress_mode = None
         #import pdb; pdb.set_trace()

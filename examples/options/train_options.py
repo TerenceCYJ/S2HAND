@@ -71,15 +71,15 @@ def get_parser():
                         help='num workers')
 
     parser.add_argument('--pretrain_segmnet', type=str, default=None)  
-    #'/dockerdata/terrchen/code/TextureHand/results/obman/model/seghandnet_29.t7'
+    #'/code/TextureHand/results/obman/model/seghandnet_29.t7'
     parser.add_argument('--pretrain_model', type=str, default=None)
-    #parser.add_argument('--pretrain_model', type=str, default='/dockerdata/terrchen/code/TextureHand/results/freihand/SSL//2d_3d_integral/model/texturehand_60.t7')
-    #parser.add_argument('--pretrain_model', type=str, default='/dockerdata/terrchen/code/TextureHand/results/freihand/SSL//2d_3d_integral/model/texturehand_40.t7')
+    #parser.add_argument('--pretrain_model', type=str, default='/code/TextureHand/results/freihand/SSL//2d_3d_integral/model/texturehand_60.t7')
+    #parser.add_argument('--pretrain_model', type=str, default='/code/TextureHand/results/freihand/SSL//2d_3d_integral/model/texturehand_40.t7')
     parser.add_argument('--pretrain_texture_model', type=str, default=None)
-    #parser.add_argument('--pretrain_texture_model', type=str, default='/dockerdata/terrchen/code/TextureHand/results/freihand/SSL//2d_3d_texture_perc/model/texturehand_20.t7')
+    #parser.add_argument('--pretrain_texture_model', type=str, default='/code/TextureHand/results/freihand/SSL//2d_3d_texture_perc/model/texturehand_20.t7')
 
     parser.add_argument('--pretrain_rgb2hm', type=str, default=None)
-    #parser.add_argument('--pretrain_rgb2hm', type=str, default='/dockerdata/terrchen/code/TextureHand/results/freihand/SSL/heatmaps_integral/model/handhm_60.t7')#'/dockerdata/terrchen/code/TextureHand/saved_models/gcn_hand_model/pretrained_models/net_hm.pth')
+    #parser.add_argument('--pretrain_rgb2hm', type=str, default='/code/TextureHand/results/freihand/SSL/heatmaps_integral/model/handhm_60.t7')#'/code/TextureHand/saved_models/gcn_hand_model/pretrained_models/net_hm.pth')
     parser.add_argument('--efficientnet_pretrained', type=str, default=None)
 
     parser.add_argument('--freeze_hm_estimator', type=bool, default=True)#check
@@ -150,17 +150,17 @@ def get_parser():
 
     # For FreiHand
     parser.add_argument('--freihand_base_path', type=str, default=None, help='Path to where the FreiHAND dataset is located.')
-    #image_output = '/dockerdata/terrchen/code/TextureHand/results/freihand/pic'
-    #state_output = '/dockerdata/terrchen/code/TextureHand/results/freihand/model'
+    #image_output = '/code/TextureHand/results/freihand/pic'
+    #state_output = '/code/TextureHand/results/freihand/model'
     # For RHD
-    parser.add_argument('--rhd_base_path', type=str, default='/dockerdata/terrchen/data/RHD/RHD_published_v2', help='Path to where the RHD dataset is located.')
+    parser.add_argument('--rhd_base_path', type=str, default='/data/RHD/RHD_published_v2', help='Path to where the RHD dataset is located.')
     # For HO3D
     parser.add_argument('--ho3d_base_path', type=str, default=None, help='Path to where the RHD dataset is located.')
 
     # For Obman
     parser.add_argument('--base_path', type=str, default=None, help='Path to where the FreiHAND dataset is located.')
-    #parser.add_argument('--out', type=str, default='/dockerdata/terrchen/code/TextureHand/results/obman/pred.json', help='File to save the predictions.')
-    #base_output_dir = '/dockerdata/terrchen/code/TextureHand/results/freihand/3d'#rgb2hm#'/dockerdata/terrchen/code/TextureHand/results/obman'
+    #parser.add_argument('--out', type=str, default='/code/TextureHand/results/obman/pred.json', help='File to save the predictions.')
+    #base_output_dir = '/code/TextureHand/results/freihand/3d'#rgb2hm#'/code/TextureHand/results/obman'
     
     #parser.add_argument('--out', type=str, default=pred_output, help='File to save the predictions.')
     parser.add_argument('--out', type=str, help='File to save the predictions.')
