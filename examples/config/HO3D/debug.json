@@ -1,0 +1,42 @@
+{
+    "train_datasets":["HO3D"],
+    "rhd_base_path":"/apdcephfs/share_1313228/home/terrchen/mydata/RHD/RHD_published_v2",
+    "val_datasets":["HO3D"],
+    "freihand_base_path": "/apdcephfs/share_1313228/home/terrchen/mydata/FreiHAND_pub_v2",
+    "ho3d_base_path": "/apdcephfs/share_1313228/home/terrchen/mydata/HO3D",
+    "base_out_path": "/apdcephfs/share_1313228/home/terrchen/outputs/HO3D/debug",
+    "is_write_tb": false,
+    "writer_topic": "/runs/HO3D/debug/",
+
+    "total_epochs": 120,
+    "init_lr": 0.001,
+    "lr_steps": [30, 60, 90],
+    "lr_gamma": 0.5,
+    "save_interval": 30,
+    "controlled_exp": true,
+    "controlled_size": 5000,
+    "controlled_exp_val": true,
+    "controlled_size_val": 1000,
+    "train_batch":8,
+    "val_batch":8,
+    "num_workers":1,
+    "demo_freq":200,
+    "demo_freq_evaluation":100,
+    
+
+    "pretrain_model_": "/apdcephfs/share_1313228/home/terrchen//outputs/freihand/new/SSL-shape-v1/model/texturehand_150.t7",
+    "pretrain_model__": "/apdcephfs/share_1313228/home/terrchen/outputs/HO3D/debug/model/texturehand_10.t7",
+
+    "train_queries": ["images","Ks","joints","trans_images","trans_Ks","open_2dj"],
+    "train_queries_ho3d":["trans_images","trans_Ks","joints","trans_joints2d","trans_open_2dj"],
+    "train_queries_rhd":["trans_images","trans_Ks","joints","joints_normed","trans_joints2d","sides","joints2d_vis"],
+    "val_queries": ["trans_images","trans_Ks"],
+    "losses_": ["tsa_poses","joint_2d","bone_direc"],
+    "losses": ["tsa_poses","joint_2d"],
+
+
+    "train_requires": ["joints", "verts"],
+    "test_requires": ["joints", "verts"],
+    "task": "train",
+    "mode": ["training"]
+}
