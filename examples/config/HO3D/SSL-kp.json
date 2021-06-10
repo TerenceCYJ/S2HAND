@@ -1,0 +1,31 @@
+{
+    "train_datasets":["HO3D"],
+    "val_datasets":["HO3D"],
+    "ho3d_base_path": "/home/mydata/HO3D",
+    "base_out_path": "/home/outputs/HO3D/SSL-kp",
+    "is_write_tb": true,
+    "writer_topic": "/runs/HO3D/SSL-kp/",
+
+    "total_epochs": 120,
+    "init_lr": 0.001,
+    "lr_steps": [30, 60, 90],
+    "lr_gamma": 0.5,
+    "save_interval": 10,
+    "controlled_exp": false,
+    "controlled_size": 1000,
+    "train_batch":64,
+    "val_batch":32,
+    "num_workers":8,
+
+    "freeze_hm_estimator": false,
+
+    "train_queries": ["images","Ks","joints","open_2dj"],
+    "train_queries_ho3d":["trans_images","trans_Ks","open_2dj"],
+    "val_queries": ["trans_images","trans_Ks"],
+    "losses": ["hm_integral"],
+    
+    "train_requires": ["heatmaps"],
+    "test_requires": ["heatmaps"],
+    "task": "hm_train",
+    "mode": ["training"]
+}

@@ -1,0 +1,20 @@
+{
+    "mode_0": ["evaluation"],
+    "mode": ["evaluation"],
+    "task": "train",
+    "freihand_base_path": "/home/mydata/FreiHAND_pub_v2",
+    "base_out_path": "/home/outputs/FreiHAND/debug0607",
+    "is_write_tb": false,
+    "writer_topic": "/runs/evaluation/",
+    "val_batch":2,
+    "num_workers":1,
+    "demo_freq_evaluation":1,
+    "img_wise_save":true,
+    "test_refinement":false,
+    "init_lr": 0,
+    "demo_freq":1,
+    "pretrain_model": "/home/outputs/FreiHAND/model/texturehand_freihand.t7",
+    "val_queries": ["images","Ks","open_2dj"],
+    "train_requires": ["heatmaps", "joints","verts","textures","lights"],
+    "test_requires": ["heatmaps", "joints","verts","textures","lights"]
+}

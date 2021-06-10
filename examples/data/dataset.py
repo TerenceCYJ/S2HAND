@@ -1723,11 +1723,7 @@ class FreiHand:
             self.open_2dj_con_list = self.open_2dj_lists[1]
             #self.CRFmask_dir = '/data/FreiHand_save/CRFmask/training'
             self.CRFmask_dir = os.path.join(self.base_path, 'CRFmask/training')
-            '''
-            self.bgimgs_dir = '/apdcephfs/share_1313228/home/terrchen/mydata/scene_data'
-            if os.path.exists(self.bgimgs_dir):
-                self.bgimgs_filename = os.listdir(self.bgimgs_dir)
-            '''
+            
             
 
             if self.set_name == 'trainval_train':
@@ -1804,31 +1800,6 @@ class FreiHand:
         del image_names
         #del mask_names
         del prefixes
-
-        ### refhand ###
-        #self.refhand_dir0 = '/apdcephfs/share_1313228/home/terrchen/mydata/OneHand/Train/source'
-        self.refhand_dir1 = '/apdcephfs/share_1313228/home/terrchen/mydata/MVHP/augmented_samples'
-        self.refhand_dir2 = '/apdcephfs/share_1313228/home/terrchen/mydata/MVHP/annotated_frames'
-        
-        self.refhand_filename = []
-        '''
-        for i in os.listdir(self.refhand_dir0):
-            self.refhand_filename.append(self.refhand_dir0+"/"+i)
-        '''
-        for i in ['data_1','data_2','data_3','data_4','data_5','data_6','data_7','data_9','data_11','data_14']:#os.listdir(self.refhand_dir1):
-            for j in os.listdir(os.path.join(self.refhand_dir1,i)):
-                j_split = j.split('.')
-                if j_split[1]=='jpg' and  j_split[0].split('_')[2]!='4':
-                    self.refhand_filename.append(os.path.join(self.refhand_dir1,i,j))
-        for i in ['data_1','data_2','data_3','data_4','data_5','data_6','data_7','data_9','data_11']:#os.listdir(self.refhand_dir2):
-            for j in os.listdir(os.path.join(self.refhand_dir2,i)):
-                j_split = j.split('.')
-                if j_split[1]=='jpg' and  j_split[0].split('_')[2]!='4':
-                    self.refhand_filename.append(os.path.join(self.refhand_dir2,i,j))
-        
-        #import pdb; pdb.set_trace()
-        self.refhand_filename += self.image_names
-        
 
     def get_img(self, idx):
         image_path = self.image_names[idx]

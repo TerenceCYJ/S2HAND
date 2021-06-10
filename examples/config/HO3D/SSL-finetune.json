@@ -1,0 +1,34 @@
+{
+    "train_datasets":["HO3D"],
+    "val_datasets":["HO3D"],
+    "ho3d_base_path": "/home/mydata/HO3D",
+    "base_out_path": "/home/outputs/HO3D/SSL-finetune",
+    "is_write_tb": true,
+    "writer_topic": "/runs/HO3D/SSL-finetune/",
+
+    "total_epochs": 60,
+    "init_lr": 0.00025,
+    "lr_steps": [20, 40],
+    "lr_gamma": 0.5,
+    "save_interval": 10,
+    "controlled_exp": false,
+    "controlled_size": 1000,
+    "train_batch":64,
+    "val_batch":16,
+    "num_workers":8,
+
+    "freeze_hm_estimator": false,
+
+    "pretrain_model": "/home/outputs/HO3D/SSL-shape/model/texturehand_120.t7",
+    "pretrain_rgb2hm":"/home/outputs/HO3D/SSL-kp/model/handhm_100.t7",
+
+    "train_queries": ["images","Ks","joints","open_2dj"],
+    "train_queries_ho3d":["trans_images","trans_Ks","joints","open_2dj"],
+    "val_queries": ["trans_images","trans_Ks"],
+    "losses": ["tsa_poses","open_2dj","mscale","open_bone_direc","hm_integral","kp_cons","texture","mtex"],
+
+    "train_requires": ["heatmaps","joints", "verts","textures","lights"],
+    "test_requires": ["heatmaps","joints", "verts","textures","lights"],
+    "task": "train",
+    "mode": ["training"]
+}

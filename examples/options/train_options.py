@@ -165,7 +165,7 @@ def get_parser():
     #parser.add_argument('--out', type=str, default=pred_output, help='File to save the predictions.')
     parser.add_argument('--out', type=str, help='File to save the predictions.')
 
-    parser.add_argument('--base_out_path', type=str, default='/apdcephfs/share_1313228/home/terrchen/outputs/freihand/SSL/debug', help='File to save the predictions.')
+    parser.add_argument('--base_out_path', type=str, default='/home/outputs/freihand/SSL/debug', help='File to save the predictions.')
     parser.add_argument('--image_size', type=int, default=224)#224
 
     parser.add_argument('--is_write_tb', type=bool, default=False)#224

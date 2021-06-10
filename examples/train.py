@@ -257,6 +257,11 @@ def main(base_path, set_name=None, writer = None):
     elif 'evaluation' in set_name:#set_name == 'evaluation':
         mode_train = False
         requires = args.test_requires
+        optimizer = optim.Adam(model.parameters(),lr=args.init_lr, betas=(0.9, 0.999), weight_decay=0)#
+        #epoch = 0
+        #current_epoch = 0
+        #save_model(model,optimizer,epoch,current_epoch, args)
+        #import pdb; pdb.set_trace()
         TrainVal(mode_train, dat_name_val, current_epoch, val_loader, model, None, requires, args, writer)
         print("Finish write prediction. Good luck!")
 

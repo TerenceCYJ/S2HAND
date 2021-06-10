@@ -1,0 +1,19 @@
+{
+    "val_datasets":["HO3D"],
+    "mode": ["evaluation"],
+    "task": "train",
+    "ho3d_base_path": "/home/mydata/HO3D",
+    "base_out_path": "/home/outputs/HO3D/evaluation",
+    "is_write_tb": false,
+    "writer_topic": "/runs/HO3D/evaluation/",
+    "val_batch":8,
+    "num_workers":2,
+    "demo_freq_evaluation":20,
+    "img_wise_save":true,
+    "test_refinement":false,
+    "pretrain_model": "/home/outputs/HO3D/model/texturehand_ho3d.t7",
+    "pretrain_texture_model":null,
+
+    "val_queries": ["trans_images","trans_Ks"],
+    "test_requires": ["heatmaps","joints","verts","textures","lights"]
+}
